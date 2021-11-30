@@ -4,7 +4,7 @@ public class MoodAnalyzer {
 	public static MoodAnalyzer instance;
 	public static String mood;
 
-	public MoodAnalyzer(String mood) {
+	 MoodAnalyzer(String mood) {
 		this.mood = mood;
 	}
 

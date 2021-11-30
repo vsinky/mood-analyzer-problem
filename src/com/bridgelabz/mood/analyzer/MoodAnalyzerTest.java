@@ -6,6 +6,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class MoodAnalyzerTest {
+	
 	public static MoodAnalyzer mood;
 
 	@BeforeClass
@@ -21,12 +22,12 @@ public class MoodAnalyzerTest {
 		assertEquals("SAD", reaction);
 	}
 
-	@Test
-	public void given_message_should_return_HAPPY() {
-		String message = "I am in Any Mood";
-
-		String reaction = mood.analyseMood(message);
-		System.out.println(reaction);
-		assertEquals("HAPPY", reaction);
-	}
+//	@Test
+//	public void given_message_should_return_HAPPY() {
+//		String message = "I am in Any Mood";
+//
+//		String reaction = mood.analyseMood(message);
+//		System.out.println(reaction);
+//		assertEquals("HAPPY", reaction);
+//	}
 }
