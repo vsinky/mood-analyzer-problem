@@ -8,7 +8,7 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 
 		String mood = sc.nextLine();
-		MoodAnalyzer md = MoodAnalyzer.getInstance(mood);
-		System.out.println(md.analyseMood());
+		MoodAnalyzer md = MoodAnalyzer.getInstance();
+		System.out.println(md.analyseMood(mood));
 	}
 }

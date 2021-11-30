@@ -4,21 +4,21 @@ public class MoodAnalyzer {
 	public static MoodAnalyzer instance;
 	private String mood;
 
-	private MoodAnalyzer(String mood) {
-		this.mood = mood;
+	private MoodAnalyzer() {
+
 	}
 
-	public static MoodAnalyzer getInstance(String mood) {
+	public static MoodAnalyzer getInstance() {
 		if (instance == null) {
-			instance = new MoodAnalyzer(mood);
+			instance = new MoodAnalyzer();
 		}
 		return instance;
 	}
 
-	public String analyseMood() {
-		if (mood.contains("sad"))
+	public String analyseMood(String message) {
+		if (message.toLowerCase().contains("sad"))
 			mood = "SAD";
-		else if (mood.contains("happy")) {
+		else   {
 			mood = "HAPPY";
 		}
 		return mood;
