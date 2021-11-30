@@ -10,5 +10,6 @@ public class Main {
 		String mood = sc.nextLine();
 		MoodAnalyzer md = MoodAnalyzer.getInstance();
 		System.out.println(md.analyseMood(mood));
+	
 	}
 }

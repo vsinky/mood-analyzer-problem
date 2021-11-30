@@ -2,15 +2,15 @@ package com.bridgelabz.mood.analyzer;
 
 public class MoodAnalyzer {
 	public static MoodAnalyzer instance;
-	private String mood;
+	public static String mood;
 
-	private MoodAnalyzer() {
-
+	public MoodAnalyzer(String mood) {
+		this.mood = mood;
 	}
 
 	public static MoodAnalyzer getInstance() {
 		if (instance == null) {
-			instance = new MoodAnalyzer();
+			instance = new MoodAnalyzer(mood);
 		}
 		return instance;
 	}
