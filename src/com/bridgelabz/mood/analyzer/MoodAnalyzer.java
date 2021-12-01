@@ -9,6 +9,10 @@ public class MoodAnalyzer {
 	 MoodAnalyzer(String message) {
 		this.message = message;
 	}
+	 
+	 MoodAnalyzer() {
+			
+		}
 
 	public static MoodAnalyzer getInstance(String message) {
 		if (instance == null) {
@@ -27,7 +31,8 @@ public class MoodAnalyzer {
 		else 
 				return "HAPPY";
 			
-		} catch(Exception ex) {
+		} catch(MoodAnalysisException ex) {
+			System.out.println(ex);
 			return null;
 		}
 	}

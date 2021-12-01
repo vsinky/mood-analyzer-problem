@@ -6,17 +6,24 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class MoodAnalyzerTest {
-	
+
 	public static MoodAnalyzer mood;
+	public static String message;
+
+	public MoodAnalyzerTest() {
+		message = null;
+	}
 
 	@BeforeClass
 	public static void init() {
-		mood = MoodAnalyzer.getInstance();
+		new MoodAnalyzerTest();
+
+		mood = MoodAnalyzer.getInstance(message);
 	}
 
 	@Test
-	public void given_message_should_return_SAD(String mesage) {
-		String message = "I am in sad Mood";
+	public void given_message_should_return_SAD() throws MoodAnalysisException {
+
 		String reaction = mood.analyzeMood();
 		System.out.println(reaction);
 		assertEquals("SAD", reaction);
@@ -24,11 +31,16 @@ public class MoodAnalyzerTest {
 
 	@Test
 	public void given_message_should_return_HAPPY() {
-		String message = "I am in any Mood";
 
-		String reaction = mood.analyzeMood();
-		System.out.println(reaction);
-		assertEquals("HAPPY", reaction);
+		String reaction;
+		try {
+
+			reaction = mood.analyzeMood();
+			assertEquals("HAPPY", reaction);
+		} catch (MoodAnalysisException e) {
+
+		}
+
 	}
-	 
+
 }
