@@ -2,7 +2,7 @@ package com.bridgelabz.mood.analyzer;
 
 public class MoodAnalyzer {
 	public static MoodAnalyzer instance;
-	public  String message;
+	public  static String message;
 
 	 MoodAnalyzer(String message) {
 		this.message = message;
@@ -23,7 +23,7 @@ public class MoodAnalyzer {
 				return "HAPPY";
 			
 		} catch(Exception ex) {
-			return " Empty String";
+			return null;
 		}
 	}
 
